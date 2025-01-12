@@ -26,7 +26,7 @@ def get_script_title(script_name):
             else:
                 return ""
     except FileNotFoundError:
-        return "File non trovato"
+        return "File not found"
     except Exception as e:
         print(f"Error while title reading {script_name}: {e}")
         return "Error while title reading"
