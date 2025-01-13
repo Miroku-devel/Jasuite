@@ -147,5 +147,4 @@ update_buttons()
 all_revealed = False
 
 window.bind("<Configure>", update_font_size)
-
 window.mainloop()

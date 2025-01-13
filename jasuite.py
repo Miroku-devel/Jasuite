@@ -31,14 +31,14 @@ def get_script_title(script_name):
         print(f"Error while title reading {script_name}: {e}")
         return "Error while title reading"
 
-def create_buttons(cartella):
+def create_buttons(folder):
     num_columns = 2
     line = 0
     column = 0
 
-    for file_name in os.listdir(cartella):
+    for file_name in os.listdir(folder):
         if file_name.endswith(".py") and file_name != os.path.basename(__file__):
-            script_name = os.path.join(cartella, file_name)
+            script_name = os.path.join(folder, file_name)
             button_name = os.path.splitext(file_name)[0].replace("_", " ").title()
             script_title = get_script_title(script_name)
 
@@ -89,5 +89,4 @@ style.configure("My.TLabel", font=button_font, padding=(3,2))
 create_buttons(script_dir)
 
 window.bind("<Configure>", update_font_size)
-
 window.mainloop()
