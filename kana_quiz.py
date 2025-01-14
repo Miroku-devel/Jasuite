@@ -96,7 +96,7 @@ def toggle_quiz_direction():
     gen_answer()
 
 window = tk.Tk()
-window.title("Learn and memorize Katakana/Hiragana")
+window.title("Kana Quiz: Learn and memorize Katakana/Hiragana")
 window.geometry("500x400")
 
 style = ttk.Style()

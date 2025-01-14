@@ -78,7 +78,7 @@ def chart_changed(*args):
 
 
 window = tk.Tk()
-window.title("Learn and memorize Kanji")
+window.title("Kanji Quiz: Learn and memorize Kanji")
 window.geometry("400x400")
 
 style = ttk.Style()

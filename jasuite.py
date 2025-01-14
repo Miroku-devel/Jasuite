@@ -26,10 +26,10 @@ def get_script_title(script_name):
             else:
                 return ""
     except FileNotFoundError:
-        return "File not found"
+        return ""
     except Exception as e:
         print(f"Error while title reading {script_name}: {e}")
-        return "Error while title reading"
+        return ""
 
 def create_buttons(folder):
     num_columns = 2
@@ -42,9 +42,12 @@ def create_buttons(folder):
             button_name = os.path.splitext(file_name)[0].replace("_", " ").title()
             script_title = get_script_title(script_name)
 
-            button_text = f"{button_name}\n{script_title}"
+            if script_title:
+                button_text = script_title
+            else:
+                button_text = button_name
 
-            button = ttk.Button(window, text=button_text, command=lambda script=script_name: start_script(script), style="My.TButton") # Applica lo stile
+            button = ttk.Button(window, text=button_text, command=lambda script=script_name: start_script(script), style="My.TButton")
             button.grid(row=line, column=column, padx=5, pady=5, sticky="nsew")
 
             column += 1
@@ -67,7 +70,7 @@ def update_font_size(event=None):
     global button_font
     button_font.config(size=font_size)
 
-    style.configure("My.TButton", font=button_font) # Aggiorna lo stile!
+    style.configure("My.TButton", font=button_font)
 
 script_dir = "."
 window = tk.Tk()
@@ -79,7 +82,7 @@ style.theme_use('clam')
 
 button_font = tkFont.Font(family="Arial")
 
-style.configure("My.TButton", font=button_font, wraplength=300, justify='center') # Stile iniziale con wraplength
+style.configure("My.TButton", font=button_font, wraplength=300, justify='center')
 
 create_buttons(script_dir)
 
