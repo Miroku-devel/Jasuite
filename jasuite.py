@@ -68,23 +68,17 @@ def update_font_size(event=None):
 
     global button_font
     button_font.config(size=font_size)
-    style.configure("My.TLabel", font=button_font, padding=(int(font_size/4), int(font_size/8)))
+    style.configure("My.TLabel", font=button_font, padding=(5,5))
 
 script_dir = "."
 window = tk.Tk()
-window.title("Japanese Basics Learning Suite")
-if window.tk.call('tk', 'windowingsystem') == 'x11':
-    window.tk.call('tk', 'scaling', '-displayof', '.', 1.0)
-else:
-    window.tk.call('tk', 'scaling', 1.0)
+window.title("Japanese Learning Suite")
 window.geometry("800x400")
 
 style = ttk.Style()
 style.theme_use('clam')
 
 button_font = tkFont.Font(family="Arial")
-
-style.configure("My.TLabel", font=button_font, padding=(3,2))
 
 create_buttons(script_dir)
 
