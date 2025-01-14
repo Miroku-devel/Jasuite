@@ -62,7 +62,7 @@ def update_font_size(event=None):
     button_font.config(size=max(font_size_button, 8))
     style.configure("TButton", font=button_font, padding=font_size_button // 4)
 
-    font_size_label = int(min(window.winfo_width(), window.winfo_height()) / 12)
+    font_size_label = int(min(window.winfo_width(), window.winfo_height()) / 15)
     label_font.config(size=max(font_size_label, 24))
 
 def chart_changed(*args):
@@ -87,7 +87,7 @@ style.theme_use('clam')
 label_font = tkFont.Font(family="Arial")
 button_font = tkFont.Font(family="Arial")
 
-label = ttk.Label(window, font=label_font, anchor="center")
+label = ttk.Label(window, font=label_font, anchor="center", justify='center')
 label.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
 frame_buttons_lines = []

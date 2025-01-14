@@ -44,10 +44,8 @@ def create_buttons(folder):
 
             button_text = f"{button_name}\n{script_title}"
 
-            style.configure("My.TLabel", font=button_font, wraplength=500, justify='center', padding=(5, 5))
-            label_button = ttk.Label(window, text=button_text, style="My.TLabel", relief="raised", borderwidth=2)
-            label_button.bind("<Button-1>", lambda event, script=script_name: start_script(script))
-            label_button.grid(row=line, column=column, padx=5, pady=5, sticky="nsew")
+            button = ttk.Button(window, text=button_text, command=lambda script=script_name: start_script(script), style="My.TButton") # Applica lo stile
+            button.grid(row=line, column=column, padx=5, pady=5, sticky="nsew")
 
             column += 1
             if column >= num_columns:
@@ -68,7 +66,8 @@ def update_font_size(event=None):
 
     global button_font
     button_font.config(size=font_size)
-    style.configure("My.TLabel", font=button_font, padding=(5,5))
+
+    style.configure("My.TButton", font=button_font) # Aggiorna lo stile!
 
 script_dir = "."
 window = tk.Tk()
@@ -79,6 +78,8 @@ style = ttk.Style()
 style.theme_use('clam')
 
 button_font = tkFont.Font(family="Arial")
+
+style.configure("My.TButton", font=button_font, wraplength=300, justify='center') # Stile iniziale con wraplength
 
 create_buttons(script_dir)
 
