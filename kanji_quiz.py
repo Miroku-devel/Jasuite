@@ -6,33 +6,7 @@ import random
 def create_chart(chart_name):
     if chart_name == "JLPT N5 (80)":
         return {
-    "日\n(nichi/hi)": "sun", "一\n(ichi)": "one", "国\n(kuni)": "country",
-    "人\n(hito)": "person", "年\n(toshi)": "year", "大\n(ookii)": "big",
-    "十\n(juu)": "ten", "二\n(ni)": "two", "本\n(hon)": "book",
-    "中\n(naka)": "middle", "長\n(nagai)": "long", "出\n(de-ru/da-su)": "exit",
-    "三\n(san)": "three", "時\n(toki)": "time", "行\n(i-ku/okona-u)": "go",
-    "見\n(mi-ru)": "see", "月\n(tsuki)": "moon/month", "分\n(fun/bun/wa-keru)": "minute/part",
-    "後\n(ato/ushiro)": "after", "前\n(mae)": "before", "生\n(i-kiru/u-mareru/sei)": "life/birth",
-    "五\n(go)": "five", "間\n(aida/ma)": "space/between", "上\n(ue/ageru/nobo-ru)": "above/up",
-    "東\n(higashi)": "east", "四\n(shi/yon)": "four", "今\n(ima)": "now",
-    "金\n(kane/kin)": "gold/money", "九\n(kyuu/kokonotsu)": "nine", "入\n(hai-ru/i-reru)": "enter",
-    "学\n(gaku/mana-bu)": "study", "高\n(takai)": "high/tall", "円\n(en)": "yen/circle",
-    "子\n(ko)": "child", "外\n(soto)": "outside", "八\n(hachi)": "eight",
-    "六\n(roku)": "six", "下\n(shita/kudaru)": "below/down", "来\n(ku-ru/ki-masu)": "come",
-    "気\n(ki)": "spirit/air", "小\n(chiisai)": "small", "七\n(shichi/nana)": "seven",
-    "山\n(yama)": "mountain", "話\n(hanashi/hanasu)": "talk", "女\n(onna)": "woman",
-    "北\n(kita)": "north", "午\n(go)": "noon", "百\n(hyaku)": "hundred",
-    "書\n(ka-ku)": "write", "先\n(saki)": "previous/ahead", "名\n(na)": "name",
-    "川\n(kawa)": "river", "千\n(sen)": "thousand", "水\n(mizu)": "water",
-    "半\n(han)": "half", "男\n(otoko)": "man", "西\n(nishi)": "west",
-    "電\n(den)": "electricity", "校\n(kou)": "school", "語\n(go)": "word/language",
-    "土\n(tsuchi)": "earth/soil", "木\n(ki)": "tree", "聞\n(ki-ku)": "hear",
-        "食\n(ta-beru)": "eat", "車\n(kuruma)": "car", "何\n(nani/nan)": "what",
-    "南\n(minami)": "south", "万\n(man)": "ten thousand", "毎\n(mai)": "every",
-    "白\n(shiroi)": "white", "天\n(ten)": "heaven", "母\n(haha/okaasan)": "mother",
-    "火\n(hi/ka)": "fire", "右\n(migi)": "right", "読\n(yo-mu)": "read",
-    "友\n(tomo)": "friend", "左\n(hidari)": "left", "休\n(yasu-mu)": "rest",
-    "父\n(chichi/otousan)": "father", "雨\n(ame)": "rain"
+"日\n(nichi/hi)":"sun","一\n(ichi)":"one","国\n(kuni)":"country","人\n(hito)":"person","年\n(toshi)":"year","大\n(ookii)":"big","十\n(juu)":"ten","二\n(ni)":"two","本\n(hon)":"book","中\n(naka)":"middle","長\n(nagai)":"long","出\n(de-ru/da-su)":"exit","三\n(san)":"three","時\n(toki)":"time","行\n(i-ku/okona-u)":"go","見\n(mi-ru)":"see","月\n(tsuki)":"moon/month","分\n(fun/bun/wa-keru)":"minute/part","後\n(ato/ushiro)":"after","前\n(mae)":"before","生\n(i-kiru/u-mareru/sei)":"life/birth","五\n(go)":"five","間\n(aida/ma)":"space/between","上\n(ue/ageru/nobo-ru)":"above/up","東\n(higashi)":"east","四\n(shi/yon)":"four","今\n(ima)":"now","金\n(kane/kin)":"gold/money","九\n(kyuu/kokonotsu)":"nine","入\n(hai-ru/i-reru)":"enter","学\n(gaku/mana-bu)":"study","高\n(takai)":"high/tall","円\n(en)":"yen/circle","子\n(ko)":"child","外\n(soto)":"outside","八\n(hachi)":"eight","六\n(roku)":"six","下\n(shita/kudaru)":"below/down","来\n(ku-ru/ki-masu)":"come","気\n(ki)":"spirit/air","小\n(chiisai)":"small","七\n(shichi/nana)":"seven","山\n(yama)":"mountain","話\n(hanashi/hanasu)":"talk","女\n(onna)":"woman","北\n(kita)":"north","午\n(go)":"noon","百\n(hyaku)":"hundred","書\n(ka-ku)":"write","先\n(saki)":"previous/ahead","名\n(na)":"name","川\n(kawa)":"river","千\n(sen)":"thousand","水\n(mizu)":"water","半\n(han)":"half","男\n(otoko)":"man","西\n(nishi)":"west","電\n(den)":"electricity","校\n(kou)":"school","語\n(go)":"word/language","土\n(tsuchi)":"earth/soil","木\n(ki)":"tree","聞\n(ki-ku)":"hear","食\n(ta-beru)":"eat","車\n(kuruma)":"car","何\n(nani/nan)":"what","南\n(minami)":"south","万\n(man)":"ten thousand","毎\n(mai)":"every","白\n(shiroi)":"white","天\n(ten)":"heaven","母\n(haha/okaasan)":"mother","火\n(hi/ka)":"fire","右\n(migi)":"right","読\n(yo-mu)":"read","友\n(tomo)":"friend","左\n(hidari)":"left","休\n(yasu-mu)":"rest","父\n(chichi/otousan)":"father","雨\n(ame)":"rain"
         }
     elif chart_name == "JLPT N4 (167)":
         return {
