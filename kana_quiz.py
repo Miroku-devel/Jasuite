@@ -79,7 +79,7 @@ def check_answer(choice):
 def update_font_size(event=None):
     font_size_button = int(min(window.winfo_width(), window.winfo_height()) / 20)
     button_font.config(size=max(font_size_button, 8))
-    style.configure("TButton", font=button_font, padding=button_font.cget("size") // 4)
+    style.configure("TButton", font=button_font, justify='center', padding=button_font.cget("size") // 4)
 
     font_size_label = int(min(window.winfo_width(), window.winfo_height()) / 4)
     label_font.config(size=max(font_size_label, 24))

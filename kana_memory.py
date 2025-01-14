@@ -44,7 +44,7 @@ def reveal_all():
 def update_font_size(event=None):
     font_size = int(min(window.winfo_width(), window.winfo_height()) / 40)
     button_font.config(size=max(font_size, 8))
-    style.configure("TButton", font=button_font, padding=button_font.cget("size") // 4)
+    style.configure("TButton", font=button_font, justify='center', padding=button_font.cget("size") // 4)
 
 def create_chart(chart_name):
     if chart_name == "hiragana":
