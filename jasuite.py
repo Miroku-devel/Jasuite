@@ -32,9 +32,21 @@ def get_script_title(script_name):
         return ""
 
 def create_buttons(folder):
-    num_columns = 2
+    frame = ttk.Frame(window)
+    frame.pack(fill="both", expand=True)
+
+    canvas = tk.Canvas(frame)
+    canvas.pack(side="left", fill="both", expand=True)
+
+    scrollbar = ttk.Scrollbar(frame, orient="vertical", command=canvas.yview)
+    scrollbar.pack(side="right", fill="y")
+
+    canvas.config(yscrollcommand=scrollbar.set)
+
+    inner_frame = ttk.Frame(canvas)
+    canvas.create_window((0, 0), window=inner_frame, anchor="nw")
+
     line = 0
-    column = 0
 
     for file_name in os.listdir(folder):
         if file_name.endswith(".py") and file_name != os.path.basename(__file__):
@@ -47,18 +59,15 @@ def create_buttons(folder):
             else:
                 button_text = button_name
 
-            button = ttk.Button(window, text=button_text, command=lambda script=script_name: start_script(script), style="My.TButton")
-            button.grid(row=line, column=column, padx=5, pady=5, sticky="nsew")
+            button = ttk.Button(inner_frame, text=button_text, command=lambda script=script_name: start_script(script), style="My.TButton")
+            button.grid(row=line, column=0, padx=5, pady=5, sticky="ew")
 
-            column += 1
-            if column >= num_columns:
-                column = 0
-                line += 1
+            line += 1
 
-    for c in range(num_columns):
-        window.columnconfigure(c, weight=1)
-    for r in range(line + 1):
-        window.rowconfigure(r, weight=1)
+    inner_frame.columnconfigure(0, weight=1)
+    inner_frame.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+    canvas.bind("<Configure>", lambda e: canvas.itemconfigure(inner_frame_id, width=e.width))
+    inner_frame_id = canvas.create_window((0, 0), window=inner_frame, anchor="nw")
 
 def update_font_size(event=None):
     window_width = window.winfo_width()
@@ -75,7 +84,7 @@ def update_font_size(event=None):
 script_dir = "."
 window = tk.Tk()
 window.title("Japanese Learning Suite")
-window.geometry("800x400")
+window.geometry("400x400")
 
 style = ttk.Style()
 style.theme_use('clam')

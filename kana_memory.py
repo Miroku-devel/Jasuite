@@ -83,7 +83,7 @@ def update_buttons():
     shuffle_buttons()
 
 window = tk.Tk()
-window.title("Kana Memory: Memorize hiragana and katakana syllables.")
+window.title("Kana Memory: Memorize kana and hiragana.")
 window.geometry("1280x720")
 
 style = ttk.Style()
@@ -125,4 +125,12 @@ update_buttons()
 all_revealed = False
 
 window.bind("<Configure>", update_font_size)
+
+window.update_idletasks()
+width = window.winfo_width()
+height = window.winfo_height()
+x = (window.winfo_screenwidth() // 2) - (width // 2)
+y = (window.winfo_screenheight() // 2) - (height // 2)
+window.geometry(f"+{x}+{y}")
+
 window.mainloop()

@@ -74,7 +74,7 @@ def chart_changed(*args):
 
 
 window = tk.Tk()
-window.title("Dictionary Quiz: Guess the correct meaning.")
+window.title("Dictionary Quiz: Guess the meaning.")
 window.geometry("400x400")
 
 style = ttk.Style()
