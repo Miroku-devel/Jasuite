@@ -83,7 +83,7 @@ def update_buttons():
     shuffle_buttons()
 
 window = tk.Tk()
-window.title("Kana Memory: Memorize kana and hiragana.")
+window.title("Kana Memory: Memorize kana.")
 window.geometry("1280x720")
 
 style = ttk.Style()
