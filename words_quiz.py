@@ -72,6 +72,11 @@ def chart_changed(*args):
         for i in range(4):
             buttons[i].config(text="", command=None)
 
+def copy_label():
+    window.clipboard_clear()
+    window.clipboard_append(label.cget("text"))
+    label.config(foreground="green")
+    label.after(1000, lambda: label.config(foreground="black"))
 
 window = tk.Tk()
 window.title("Dictionary Quiz: Guess the meaning.")
@@ -85,6 +90,7 @@ button_font = tkFont.Font(family="Arial")
 
 label = ttk.Label(window, font=label_font, anchor="center", justify='center')
 label.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
+label.bind("<Button-1>", lambda event: copy_label())
 
 frame_buttons_lines = []
 for r in range(2):
