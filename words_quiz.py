@@ -54,7 +54,7 @@ def check_answer(choice, chart):
         label.config(foreground="red")
 
 def update_font_size(event=None):
-    font_size_button = int(min(window.winfo_width(), window.winfo_height()) / 25)
+    font_size_button = int(min(window.winfo_width(), window.winfo_height()) / 35)
     button_font.config(size=max(font_size_button, 8))
     style.configure("TButton", font=button_font, justify='center', padding=font_size_button // 4)
 
@@ -80,7 +80,7 @@ def copy_label():
 
 window = tk.Tk()
 window.title("Dictionary Quiz: Guess the meaning.")
-window.geometry("400x400")
+window.geometry("500x400")
 
 style = ttk.Style()
 style.theme_use('clam')
